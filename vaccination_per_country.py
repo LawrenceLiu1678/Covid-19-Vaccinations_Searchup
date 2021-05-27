@@ -1,3 +1,10 @@
+"""
+This program is made by Lawrence Liu
+------------------------------------
+
+This program's is created to searchup the current numbers of vaccinations for any country the user may want to search for, as well as the specific date.
+"""
+
 import urllib.request, json
 from datetime import datetime, timedelta
 
