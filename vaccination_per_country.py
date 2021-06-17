@@ -1,10 +1,3 @@
-"""
-This program is made by Lawrence Liu
-------------------------------------
-
-This program's is created to searchup the current numbers of vaccinations for any country the user may want to search for, as well as the specific date.
-"""
-
 import urllib.request, json
 from datetime import datetime, timedelta
 
@@ -88,11 +81,22 @@ def search_data(data):
 
                             # searches for a date to match with the user input
                             if value_two == searched_time:
+                                """
+                                Old Code
+                                ________
+                                
                                 store_date = data_info["date"]
                                 store_total_vaccinations = data_info["total_vaccinations"]
                                 store_people_vaccinated = data_info["people_vaccinated"]
                                 store_people_fully_vaccinated = data_info["people_fully_vaccinated"]
                                 store_daily_vaccinations = data_info["daily_vaccinations"]
+                                """
+
+                                store_date = data_info.get("date")
+                                store_total_vaccinations = data_info.get("total_vaccinations")
+                                store_people_vaccinated = data_info.get("people_vaccinated")
+                                store_people_fully_vaccinated = data_info.get("people_fully_vaccinated")
+                                store_daily_vaccinations = data_info.get("daily_vaccinations")
 
                                 print_data_result_messages(store_date, store_total_vaccinations,
                                                            store_people_vaccinated, store_people_fully_vaccinated,
@@ -103,11 +107,11 @@ def search_data(data):
                                 searched_time = (datetime.now() - timedelta(1)).strftime("%Y-%m-%d")
 
                                 if value_two == searched_time:
-                                    store_date = data_info["date"]
-                                    store_total_vaccinations = data_info["total_vaccinations"]
-                                    store_people_vaccinated = data_info["people_vaccinated"]
-                                    store_people_fully_vaccinated = data_info["people_fully_vaccinated"]
-                                    store_daily_vaccinations = data_info["daily_vaccinations"]
+                                    store_date = data_info.get("date")
+                                    store_total_vaccinations = data_info.get("total_vaccinations")
+                                    store_people_vaccinated = data_info.get("people_vaccinated")
+                                    store_people_fully_vaccinated = data_info.get("people_fully_vaccinated")
+                                    store_daily_vaccinations = data_info.get("daily_vaccinations")
 
                                     print_data_result_messages(store_date, store_total_vaccinations,
                                                                store_people_vaccinated, store_people_fully_vaccinated,
